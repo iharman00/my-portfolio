@@ -1,5 +1,4 @@
 import { AnchorHTMLAttributes } from "react";
-import { MotionProps, motion } from "framer-motion";
 
 interface Props {
   children: string;
@@ -9,17 +8,15 @@ const NavLink = ({
   children,
   href,
   ...rest
-}: MotionProps & AnchorHTMLAttributes<HTMLAnchorElement & Props>) => {
+}: AnchorHTMLAttributes<HTMLAnchorElement & Props>) => {
   return (
-    <motion.a
+    <a
       href={href}
-      className="font-poppins font-medium text-2xl uppercase tracking-wide"
+      className="text-3xl lg:text-xl font-medium capitalize tracking-wide lg:after:block after:bg-primary after:h-1 after:rounded-md after:relative after:bottom-[-0.5rem] after:hover:bottom-[-0.2rem] after:opacity-0 after:hover:opacity-100 after:transition-all after:ease-out after:duration-300"
       {...rest}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
     >
       {children}
-    </motion.a>
+    </a>
   );
 };
 
@@ -31,7 +28,7 @@ const Link = ({
   return (
     <a
       href={href}
-      className="font-poppins italic font-medium text-base inline-block mt-6 after:content-[''] after:block after:bg-primary after:h-1 after:relative after:bottom-[-0.5rem] after:hover:bottom-[-0.2rem] after:transition-all after:ease-out after:duration-300"
+      className="font-poppins italic font-medium text-base inline-block mt-6 after:block after:bg-primary after:h-1 after:relative after:bottom-[-0.5rem] after:hover:bottom-[-0.2rem] after:transition-all after:ease-out after:duration-300 after:-z-20"
       {...rest}
     >
       {children}

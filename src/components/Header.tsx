@@ -15,23 +15,32 @@ const Header = () => {
   };
 
   return (
-    <header className="container px-4 mx-auto py-6">
+    <header className="container py-6 lg:py-8 sticky top-0 bg-background">
       <nav className="flex justify-between items-center">
         <a
           href="#home"
           className="hover:scale-105 transition-transform ease-out duration-300"
         >
-          <img src={logo} alt="harman.dev logo" height="40" />
+          <img src={logo} alt="harman.dev logo" className="h-6" />
         </a>
 
-        {/* Menu Icons */}
-        <div onClick={toggleHandler} className="z-10 md:hidden mr-1">
-          {!toggle ? (
-            <AiOutlineMenu size="2rem" />
-          ) : (
-            <AiOutlineClose size="2rem" />
-          )}
-        </div>
+        {/* Desktop Navigation */}
+        <ul className="hidden lg:flex justify-between gap-2">
+          {navLinks.map((nav) => (
+            <li key={nav} className="mr-8 last:mr-0">
+              <NavLink href={`#${nav}`}>{nav}</NavLink>
+            </li>
+          ))}
+        </ul>
+
+        {/* Hamburger Icon */}
+        {!toggle && (
+          <AiOutlineMenu
+            size="2rem"
+            className="lg:hidden mr-1"
+            onClick={toggleHandler}
+          />
+        )}
 
         {/* Mobile Navigation Menu */}
         <AnimatePresence>
@@ -41,27 +50,27 @@ const Header = () => {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ ease: "easeOut", duration: 0.3 }}
-              className="fixed top-0 left-0 w-screen h-screen bg-background px-4 md:hidden overflow-hidden z-[5]"
+              className="fixed top-0 left-0 w-screen h-screen bg-background px-4 py-6 lg:hidden z-50 flex justify-start items-center"
             >
-              <ul className="container px-4 m-auto">
+              {toggle && (
+                <AiOutlineClose
+                  size="2rem"
+                  className="fixed top-0 right-0 z-10 lg:hidden mt-6 mr-5"
+                  onClick={toggleHandler}
+                />
+              )}
+              <ul>
                 {navLinks.map((nav) => (
-                  <li key={nav}>
-                    <NavLink href={`#${nav}`}>{nav}</NavLink>
+                  <li key={nav} className="mb-4 last:mb-0">
+                    <NavLink href={`#${nav}`} onClick={toggleHandler}>
+                      {nav}
+                    </NavLink>
                   </li>
                 ))}
               </ul>
             </motion.div>
           )}
         </AnimatePresence>
-
-        {/* Desktop Navigation */}
-        <ul className="hidden md:flex justify-between gap-2">
-          {navLinks.map((nav) => (
-            <li key={nav}>
-              <NavLink href={`#${nav}`}>{nav}</NavLink>
-            </li>
-          ))}
-        </ul>
       </nav>
     </header>
   );

@@ -12,6 +12,10 @@ export default {
       foreground: "#ffffff",
       "foreground-dark": "#A3A3A3",
     },
+    container: {
+      center: true,
+      padding: "1rem",
+    },
     fontFamily: {
       poppins: ["Poppins", "sans-serif"],
       sg: ["Space Grotesk", "sans-serif"],

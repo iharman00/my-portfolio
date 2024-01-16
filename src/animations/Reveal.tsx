@@ -13,7 +13,6 @@ const Reveal = ({ children }: Props) => {
   useEffect(() => {
     if (isInView) {
       mainControls.start({ y: 0, opacity: 1 });
-      console.log("in view");
     }
   }, [isInView]);
 
@@ -22,7 +21,7 @@ const Reveal = ({ children }: Props) => {
       ref={ref}
       initial={{ y: 30, opacity: 0 }}
       animate={mainControls}
-      transition={{ ease: "easeOut", duration: 0.5, delay: 0.25 }}
+      transition={{ ease: "easeOut", duration: 0.3, delay: 0.1 }}
     >
       {children}
     </motion.div>

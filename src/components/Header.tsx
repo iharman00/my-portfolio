@@ -8,7 +8,7 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 const Header = () => {
   const [toggle, setToggle] = useState(false);
 
-  const navLinks = ["home", "about", "skills", "projects", "contact"];
+  const navLinks = ["about", "skills", "projects", "contact"];
 
   const toggleHandler = () => {
     setToggle((prev) => !prev);
@@ -16,7 +16,7 @@ const Header = () => {
 
   return (
     <header className="container py-6 lg:py-8 sticky top-0 bg-background">
-      <nav className="flex justify-between items-center">
+      <nav className="wrapper flex justify-between items-center">
         <a
           href="#home"
           className="hover:scale-105 transition-transform ease-out duration-300"

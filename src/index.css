@@ -5,17 +5,21 @@
   html {
     @apply bg-background text-foreground font-poppins scroll-smooth;
   }
+  /* Wrapper to tighten the design on larger screens  */
+  .wrapper {
+    @apply xl:w-10/12 mx-auto;
+  }
   h1 {
-    @apply font-bold text-4xl md:text-5xl tracking-[-0.06rem] leading-[120%] md:leading-[120%];
+    @apply font-semibold text-4xl md:text-5xl lg:w-6/12 tracking-[-0.06rem] leading-[120%] md:leading-[120%];
   }
   h2 {
-    @apply font-bold text-3xl md:text-4xl tracking-[-0.06rem] leading-[120%] md:leading-[120%];
+    @apply font-bold text-3xl md:text-4xl lg:w-8/12 leading-[120%] md:leading-[120%];
   }
   h3 {
     @apply text-lg;
   }
   p {
-    @apply font-sg text-sm md:text-base max-w-[37.5rem] leading-[170%] md:leading-[170%] text-foreground-dark;
+    @apply font-sg text-base md:text-lg lg:text-xl lg:max-w-[50%] leading-[170%] md:leading-[170%] lg:leading-[180%] text-foreground-dark;
   }
 }
 

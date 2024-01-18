@@ -24,8 +24,7 @@ interface SkillsIconsType {
   [key: string]: ReactNode;
 }
 
-let SkillsIconSize = "2.2rem";
-
+let SkillsIconSize = "1.4rem";
 const SkillIcons: SkillsIconsType = {
   Html: <Html5Original size={SkillsIconSize} />,
   CSS: <Css3Original size={SkillsIconSize} />,
@@ -46,10 +45,10 @@ const SkillIcons: SkillsIconsType = {
 const SkillsTag = ({ children }: Props) => {
   return (
     <div className="flex flex-col justify-center items-center text-center gap-4 group">
-      <div className="bg-secondary hover:bg-secondary-hover w-24 h-24 rounded-full flex justify-center items-center transition-all ease-out duration-300">
+      <div className="bg-secondary hover:bg-secondary-hover w-16 h-16 rounded-full flex justify-center items-center transition-all ease-out duration-300">
         {SkillIcons[children] || children}
       </div>
-      <p className="font-poppins font-normal text-lg max-w-full text-foreground">
+      <p className="font-poppins font-normal text-sm max-w-full text-foreground">
         {children}
       </p>
     </div>

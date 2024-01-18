@@ -26,8 +26,8 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <ul className="hidden lg:flex justify-between gap-2">
-          {navLinks.map((nav) => (
-            <li key={nav} className="mr-8 last:mr-0">
+          {navLinks.map((nav, index) => (
+            <li key={index} className="mr-8 last:mr-0">
               <NavLink href={`#${nav}`}>{nav}</NavLink>
             </li>
           ))}

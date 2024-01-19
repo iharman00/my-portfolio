@@ -11,6 +11,7 @@ export default {
       "secondary-hover": "#3B3B3B",
       foreground: "#ffffff",
       "foreground-dark": "#A3A3A3",
+      border: "#27272A",
     },
     container: {
       center: true,

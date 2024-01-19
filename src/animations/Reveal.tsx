@@ -19,9 +19,9 @@ const Reveal = ({ children }: Props) => {
   return (
     <motion.div
       ref={ref}
-      initial={{ y: 30, opacity: 0 }}
+      initial={{ y: 10, opacity: 0 }}
       animate={mainControls}
-      transition={{ ease: "easeOut", duration: 0.3, delay: 0.1 }}
+      transition={{ ease: "easeOut", duration: 0.4, delay: 0.1 }}
     >
       {children}
     </motion.div>

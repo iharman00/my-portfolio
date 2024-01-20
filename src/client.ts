@@ -25,8 +25,22 @@ export async function getSkills() {
       "skills": *[_type == "skills" && references(^._id)] | order(index asc) {
         name,
         icon,
-        link,
       }
+    }`);
+  return result;
+}
+
+export async function getProjects() {
+  const result = await client.fetch(`*[_type == "projects"] | order(index asc){
+    title,
+      description,
+    siteLink,
+    codeLink,
+    image,
+    "techStack": techStack[]->{
+        name,
+        icon,
+    }
     }`);
   return result;
 }

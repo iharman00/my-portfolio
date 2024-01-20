@@ -3,6 +3,7 @@ import About from "../sections/About.tsx";
 import Skills from "../sections/Skills.tsx";
 import Header from "../sections/Header.tsx";
 import Footer from "../sections/Footer.tsx";
+import Projects from "./Projects.tsx";
 
 const Root = () => {
   return (
@@ -12,6 +13,7 @@ const Root = () => {
         <Hero />
         <About />
         <Skills />
+        <Projects />
       </main>
       <Footer />
     </>

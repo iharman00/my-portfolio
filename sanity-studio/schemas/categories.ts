@@ -10,18 +10,17 @@ export default {
       options: ['Frontend', 'Backend', 'Dev Tools'],
     },
     {
+      name: 'index',
+      title: 'Index',
+      type: 'number',
+    },
+    {
       name: 'icon',
       title: 'Icon',
       type: 'image',
       options: {
         hotspot: true,
       },
-    },
-
-    {
-      name: 'index',
-      title: 'Index',
-      type: 'number',
     },
   ],
   orderings: [

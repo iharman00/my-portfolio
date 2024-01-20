@@ -16,7 +16,7 @@
     @apply font-bold text-3xl md:text-4xl lg:w-8/12 leading-[120%] md:leading-[120%];
   }
   h3 {
-    @apply font-medium text-lg leading-[120%] md:leading-[120%];
+    @apply font-semibold text-2xl leading-[120%] md:leading-[120%];
   }
   p {
     @apply font-sg text-base md:text-lg lg:max-w-[70%] 2xl:max-w-[50%] leading-[170%] md:leading-[170%] lg:leading-[180%] text-foreground-dark;

@@ -10,6 +10,11 @@ export default {
       to: [{type: 'categories'}],
     },
     {
+      name: 'index',
+      title: 'Index',
+      type: 'number',
+    },
+    {
       name: 'name',
       title: 'Name',
       type: 'string',
@@ -21,16 +26,6 @@ export default {
       options: {
         hotspot: true,
       },
-    },
-    {
-      name: 'index',
-      title: 'Index',
-      type: 'number',
-    },
-    {
-      name: 'link',
-      title: 'Link',
-      type: 'string',
     },
   ],
   orderings: [

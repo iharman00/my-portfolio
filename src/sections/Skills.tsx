@@ -1,23 +1,22 @@
 import { useState, useEffect } from "react";
-import { AnimatePresence } from "framer-motion";
-import { getSkills } from "../client.ts";
+import CategorySelector from "../components/CategorySelector.tsx";
+import SkillsList from "../components/SkillsList.tsx";
 
 import Reveal from "../animations/Reveal.tsx";
-import { SkillsTag } from "../components/Tags.tsx";
+import { getSkills } from "../client.ts";
 
-interface Skills {
+interface SkillsType {
   name: string;
-  skills: [
-    {
-      name: string;
-      icon: any;
-      link: string;
-    }
-  ];
+  icon: any;
+  skills: {
+    name: string;
+    icon: any;
+  }[];
 }
+[];
 
 const Skills = () => {
-  const [skills, setSkills] = useState<Skills[]>([]);
+  const [skills, setSkills] = useState<SkillsType[]>([]);
   const [activeSkills, setActiveSkills] = useState<
     [string, number] | [null, 0]
   >([null, 0]);
@@ -52,43 +51,19 @@ const Skills = () => {
               </p>
             </div>
             <div className="flex flex-col gap-10 md:gap-16 mt-4">
-              <div className="flex justify-between border-border border-2 rounded-lg overflow-clip w-full md:max-w-[50%] md:mx-auto">
-                {skills.map((category, index) => (
-                  <button
-                    key={index}
-                    onClick={() => showSkills(category.name, index)}
-                    className={`${
-                      activeSkills[1] === index && "bg-border"
-                    } hover:bg-border p-4 transition-all ease-out duration-300 w-full`}
-                  >
-                    {category.name}
-                  </button>
-                ))}
-              </div>
+              <CategorySelector
+                skills={skills}
+                activeSkills={activeSkills}
+                showSkills={showSkills}
+              />
               <div className="md:max-w-[80%] mx-auto mt-1">
                 {skills.map((category, index) => (
-                  <AnimatePresence key={index}>
-                    {activeSkills[0] === category.name && (
-                      <Reveal>
-                        <ul
-                          key={index}
-                          className="grid grid-cols-3 md:grid-cols-3 2xl:grid-cols-4 gap-x-8 md:gap-x-14 gap-y-[4.5rem]"
-                        >
-                          {skills[activeSkills[1]].skills?.map(
-                            (skill, index) => (
-                              <li key={index}>
-                                <SkillsTag
-                                  name={skill?.name}
-                                  icon={skill.icon}
-                                  link={skill?.link}
-                                />
-                              </li>
-                            )
-                          )}
-                        </ul>
-                      </Reveal>
-                    )}
-                  </AnimatePresence>
+                  <SkillsList
+                    key={index}
+                    skillsList={skills}
+                    activeSkills={activeSkills}
+                    category={category}
+                  />
                 ))}
               </div>
             </div>

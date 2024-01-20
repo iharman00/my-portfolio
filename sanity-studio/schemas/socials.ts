@@ -1,6 +1,6 @@
 export default {
-  name: 'categories',
-  title: 'Categories',
+  name: 'socials',
+  title: 'Socials',
   type: 'document',
   fields: [
     {
@@ -12,7 +12,11 @@ export default {
       name: 'name',
       title: 'Name',
       type: 'string',
-      options: ['Frontend', 'Backend', 'Dev Tools'],
+    },
+    {
+      name: 'link',
+      title: 'Link',
+      type: 'string',
     },
     {
       name: 'icon',

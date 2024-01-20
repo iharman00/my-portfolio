@@ -44,3 +44,12 @@ export async function getProjects() {
     }`);
   return result;
 }
+
+export async function getSocials() {
+  const result = await client.fetch(`*[_type == "socials"] | order(index asc){
+    name,
+    link,
+    icon
+    }`);
+  return result;
+}

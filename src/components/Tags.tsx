@@ -5,23 +5,21 @@ interface SkillsTagProps {
   icon: any;
 }
 
-interface TechStackTagProps {
-  name: string;
-  icon: any;
-}
-
 const SkillsTag = ({ name, icon }: SkillsTagProps) => {
   return (
     <div className="flex flex-col justify-start items-center gap-6 group cursor-pointer">
-      {/* <div className="bg-secondary hover:bg-secondary-hover w-[4.5rem] h-[4.5rem] rounded-full flex justify-center items-center transition-all ease-out duration-300"> */}
       <img src={urlFor(icon).url()} alt={name} className="size-8" />
-      {/* </div> */}
       <p className="font-poppins font-normal text-base lg:text-lg max-w-full text-foreground">
         {name}
       </p>
     </div>
   );
 };
+
+interface TechStackTagProps {
+  name: string;
+  icon: any;
+}
 
 const TechStackTag = ({ name, icon }: TechStackTagProps) => {
   return (
@@ -34,4 +32,29 @@ const TechStackTag = ({ name, icon }: TechStackTagProps) => {
   );
 };
 
-export { SkillsTag, TechStackTag };
+interface SocialTagProps {
+  social: {
+    name: string;
+    icon: any;
+    link: string;
+  };
+  size: string;
+}
+
+const SocialTag = ({ social, size }: SocialTagProps) => {
+  return (
+    <a href={social.link} target="_blank">
+      <div
+        className={`border-border border-2 hover:bg-border ${size} rounded-full flex justify-center items-center transition-all ease-out duration-300`}
+      >
+        <img
+          src={urlFor(social.icon).url()}
+          alt={social.name}
+          className="size-6"
+        />
+      </div>
+    </a>
+  );
+};
+
+export { SkillsTag, TechStackTag, SocialTag };

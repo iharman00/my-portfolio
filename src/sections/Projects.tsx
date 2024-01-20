@@ -29,10 +29,10 @@ const Projects = () => {
     makeGetProjectsReq();
   }, []);
   return (
-    <section id="projects" className="container my-52">
-      <div className="wrapper text-center">
+    <section id="projects" className="container py-52">
+      <div className="wrapper md:text-center">
         <Reveal>
-          <h2 className="mx-auto">Projects</h2>
+          <h2>Projects</h2>
           {projects.length > 0 ? (
             <>
               <p className="mx-auto mt-4">Here are some examples of my work</p>

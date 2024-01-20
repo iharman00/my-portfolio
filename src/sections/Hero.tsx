@@ -3,7 +3,7 @@ import { Link } from "../components/Links";
 
 const Hero = () => {
   return (
-    <section id="home" className="container my-40 mb-52">
+    <section id="home" className="container py-40">
       <div className="wrapper">
         <Reveal>
           <h1>

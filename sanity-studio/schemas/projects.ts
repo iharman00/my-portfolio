@@ -1,17 +1,17 @@
 export default {
   name: 'projects',
-  title: 'projects',
+  title: 'Projects',
   type: 'document',
   fields: [
-    {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
-    },
     {
       name: 'index',
       title: 'Index',
       type: 'number',
+    },
+    {
+      name: 'title',
+      title: 'Title',
+      type: 'string',
     },
     {
       name: 'image',

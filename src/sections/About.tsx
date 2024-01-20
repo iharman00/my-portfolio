@@ -2,7 +2,7 @@ import Reveal from "../animations/Reveal.tsx";
 
 const About = () => {
   return (
-    <section id="about" className="container my-52">
+    <section id="about" className="container py-52">
       <div className="wrapper">
         <Reveal>
           <div className="flex flex-col gap-20 lg:gap-20 lg:grid lg:grid-cols-2 items-center md:max-lg:text-center">

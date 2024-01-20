@@ -1,9 +1,10 @@
-import Hero from "../sections/Hero.tsx";
-import About from "../sections/About.tsx";
-import Skills from "../sections/Skills.tsx";
-import Header from "../sections/Header.tsx";
-import Footer from "../sections/Footer.tsx";
+import Hero from "./Hero.tsx";
+import About from "./About.tsx";
+import Skills from "./Skills.tsx";
+import Header from "./Header.tsx";
+import Footer from "./Footer.tsx";
 import Projects from "./Projects.tsx";
+import Contact from "./Contact.tsx";
 
 const Root = () => {
   return (
@@ -14,6 +15,7 @@ const Root = () => {
         <About />
         <Skills />
         <Projects />
+        <Contact />
       </main>
       <Footer />
     </>

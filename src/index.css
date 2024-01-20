@@ -13,7 +13,7 @@
     @apply font-semibold text-4xl md:text-5xl lg:w-6/12 tracking-[-0.06rem] leading-[120%] md:leading-[120%];
   }
   h2 {
-    @apply font-bold text-3xl md:text-4xl lg:w-8/12 leading-[120%] md:leading-[120%];
+    @apply font-bold text-3xl md:text-4xl leading-[120%] md:leading-[120%];
   }
   h3 {
     @apply font-semibold text-2xl leading-[120%] md:leading-[120%];

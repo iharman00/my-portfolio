@@ -38,12 +38,12 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="container my-52">
+    <section id="skills" className="container py-52">
       <div className="wrapper">
         <Reveal>
           <div className="grid grid-cols-1 gap-8 md:text-center md:max-lg:px-10">
             <div>
-              <h2 className="mx-auto">Skills</h2>
+              <h2>Skills</h2>
               <p className="mt-6 md:mx-auto">
                 These are some of the technologies I work with. Greetings! I'm
                 Harman, a dedicated developer with a knack for turning creative

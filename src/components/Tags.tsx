@@ -12,9 +12,7 @@ const SkillsTag = ({ name, icon, alt }: SkillsTagProps) => {
       <img
         src={urlFor(icon).url()}
         alt={alt}
-        className="size-8"
-        width="32"
-        height="32"
+        style={{ width: "32px", height: "32px" }}
       />
       <p className="font-poppins font-normal text-base lg:text-lg max-w-full text-foreground">
         {name}
@@ -35,9 +33,7 @@ const TechStackTag = ({ name, icon, alt }: TechStackTagProps) => {
       <img
         src={urlFor(icon).url()}
         alt={alt}
-        width="20"
-        height="20"
-        className="size-5"
+        style={{ width: "20px", height: "20px" }}
       />
       <p className="font-poppins font-medium text-base max-w-full group-hover:text-foreground">
         {name}
@@ -65,8 +61,7 @@ const SocialTag = ({ social, size }: SocialTagProps) => {
         <img
           src={urlFor(social.icon).url()}
           alt={social.alt}
-          width="24"
-          height="24"
+          style={{ width: "24px", height: "24px" }}
         />
       </div>
     </a>

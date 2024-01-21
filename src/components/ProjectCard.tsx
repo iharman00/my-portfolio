@@ -31,8 +31,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           <img
             src={urlFor(project.image).url()}
             alt={project.imgAlt}
-            width="auto"
-            height="auto"
+            style={{ width: "auto", height: "auto" }}
           />
         </div>
         <div className="text-left">

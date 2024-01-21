@@ -13,9 +13,7 @@ const Header = () => {
           <img
             src={logo}
             alt="harman.dev logo"
-            width="178"
-            height="24"
-            className="h-6"
+            style={{ width: "178px", height: "24px" }}
           />
         </a>
 

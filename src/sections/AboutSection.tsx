@@ -28,15 +28,14 @@ const AboutSection = () => {
   return (
     <section id="about" className="container py-20 xl:py-32">
       <div className="wrapper">
-        {section?.img && (
+        {section?.img ? (
           <Reveal>
             <div className="flex flex-col gap-20 lg:gap-20 lg:grid lg:grid-cols-2 items-center md:max-lg:text-center">
-              <div className="w-full max-w-96 max-h-80 justify-self-center">
+              <div className="justify-self-center">
                 <img
                   src={urlFor(section?.img).url()}
                   alt={section?.imgAlt}
-                  width="auto"
-                  height="auto"
+                  style={{ maxWidth: "384px", maxHeight: "384px" }}
                 />
               </div>
 
@@ -48,15 +47,16 @@ const AboutSection = () => {
               </div>
             </div>
           </Reveal>
-        )}
-        <Reveal>
-          <div className="mx-auto text-center">
-            <h2>{section?.title}</h2>
-            <div className="mt-6 md:max-w-[70%] xl:max-w-[50%] md:mx-auto">
-              <PortableText value={section?.content} />
+        ) : (
+          <Reveal>
+            <div className="mx-auto text-center">
+              <h2>{section?.title}</h2>
+              <div className="mt-6 md:max-w-[70%] xl:max-w-[50%] md:mx-auto">
+                <PortableText value={section?.content} />
+              </div>
             </div>
-          </div>
-        </Reveal>
+          </Reveal>
+        )}
       </div>
     </section>
   );

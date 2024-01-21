@@ -29,9 +29,7 @@ const HeroSection = () => {
       <div className="wrapper">
         <Reveal>
           <div className="lg:max-w-[70%] 2xl:max-w-[50%]">
-            <h1 className="mb-4">
-              Hi, I'm Harman. <br /> A web Developer.
-            </h1>
+            <PortableText value={section?.title} />
             <PortableText value={section?.content} />
             <Link href="#contact">Let's talk!</Link>
           </div>

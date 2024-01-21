@@ -52,7 +52,7 @@ const ProjectsSection = () => {
     <section id="projects" className="container py-20 xl:py-32">
       <div className="wrapper md:text-center">
         <Reveal>
-          <h2>Projects</h2>
+          <PortableText value={section?.title} />
           {projects.length > 0 ? (
             <>
               <div className="mx-auto mt-4">

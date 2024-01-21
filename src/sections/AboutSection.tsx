@@ -40,8 +40,8 @@ const AboutSection = () => {
               </div>
 
               <div>
-                <h2>{section?.title}</h2>
-                <div className="mt-6 md:max-w-[70%] lg:max-w-full md:mx-auto">
+                <PortableText value={section?.title} />
+                <div className="md:max-w-[70%] lg:max-w-full md:mx-auto">
                   <PortableText value={section?.content} />
                 </div>
               </div>
@@ -50,8 +50,8 @@ const AboutSection = () => {
         ) : (
           <Reveal>
             <div className="mx-auto text-center">
-              <h2>{section?.title}</h2>
-              <div className="mt-6 md:max-w-[70%] xl:max-w-[50%] md:mx-auto">
+              <PortableText value={section?.title} />
+              <div className="md:max-w-[70%] xl:max-w-[50%] md:mx-auto">
                 <PortableText value={section?.content} />
               </div>
             </div>

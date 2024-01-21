@@ -11,7 +11,8 @@ export default {
     {
       name: 'title',
       title: 'Title',
-      type: 'string',
+      type: 'array',
+      of: [{type: 'block'}],
     },
     {
       title: 'Content',

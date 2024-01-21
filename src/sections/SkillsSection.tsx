@@ -61,7 +61,7 @@ const SkillsSection = () => {
         <Reveal>
           <div className="grid grid-cols-1 gap-8 md:text-center md:max-lg:px-10">
             <div className="lg:max-w-[70%] 2xl:max-w-[50%] md:mx-auto">
-              <h2 className="mb-6">{section?.title}</h2>
+              <PortableText value={section?.title} />
               <PortableText value={section?.content} />
             </div>
             <div className="flex flex-col gap-10 md:gap-16 mt-4">

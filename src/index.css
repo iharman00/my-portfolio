@@ -19,7 +19,7 @@
     @apply font-semibold text-2xl leading-[120%] md:leading-[120%];
   }
   p {
-    @apply font-sg text-base leading-[170%] md:leading-[170%] lg:leading-[180%] text-foreground-dark;
+    @apply font-sg text-base leading-[170%] md:leading-[170%] lg:leading-[180%] text-foreground-dark mt-4;
   }
 }
 

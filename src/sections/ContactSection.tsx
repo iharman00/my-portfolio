@@ -45,7 +45,7 @@ const ContactSection = () => {
       <div className="wrapper xl:max-w-[50%] md:text-lg">
         <Reveal>
           <div>
-            <h2 className="mb-4">{section?.title}</h2>
+            <PortableText value={section?.title} />
             <PortableText value={section?.content} />
           </div>
           <div className="flex flex-col gap-10 mt-16">

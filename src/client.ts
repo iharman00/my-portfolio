@@ -57,3 +57,13 @@ export async function getSocials() {
     }`);
   return result;
 }
+
+export async function getSection() {
+  const result = await client.fetch(`*[_type == "sections"] | order(index asc){
+    title,
+    content,
+    img,
+    imgAlt
+    }`);
+  return result;
+}

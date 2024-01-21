@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { getProjects } from "../client.ts";
 import Reveal from "../animations/Reveal.tsx";
 
+import { getSection } from "../client.ts";
+import { PortableText } from "@portabletext/react";
 import ProjectCard from "../components/ProjectCard.tsx";
 
 interface ProjectsType {
@@ -20,14 +22,30 @@ interface ProjectsType {
   ];
 }
 
+interface SectionType {
+  title: any;
+  content: any;
+  img?: any;
+  imgAlt?: string;
+}
+[];
+
 const ProjectsSection = () => {
+  const [section, setSection] = useState<SectionType>();
   const [projects, setProjects] = useState<ProjectsType[]>([]);
+
+  const makeGetSectionReq = async () => {
+    const result = await getSection();
+    setSection(result[3]);
+  };
+
   const makeGetProjectsReq = async () => {
     const result = await getProjects();
     setProjects(result);
   };
 
   useEffect(() => {
+    makeGetSectionReq();
     makeGetProjectsReq();
   }, []);
   return (
@@ -37,7 +55,9 @@ const ProjectsSection = () => {
           <h2>Projects</h2>
           {projects.length > 0 ? (
             <>
-              <p className="mx-auto mt-4">Here are some examples of my work</p>
+              <div className="mx-auto mt-4">
+                <PortableText value={section?.content} />
+              </div>
               <div className="flex flex-col gap-8 mt-14">
                 {projects.map((project, index) => (
                   <ProjectCard key={index} project={project} />

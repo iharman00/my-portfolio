@@ -4,6 +4,8 @@ import SkillsList from "../components/SkillsList.tsx";
 
 import Reveal from "../animations/Reveal.tsx";
 import { getSkills } from "../client.ts";
+import { getSection } from "../client.ts";
+import { PortableText } from "@portabletext/react";
 
 interface SkillsType {
   name: string;
@@ -16,11 +18,25 @@ interface SkillsType {
 }
 [];
 
+interface SectionType {
+  title: any;
+  content: any;
+  img?: any;
+  imgAlt?: string;
+}
+[];
+
 const SkillsSection = () => {
   const [skills, setSkills] = useState<SkillsType[]>([]);
   const [activeCategory, setActiveCategory] = useState<
     [string, number] | [null, 0]
   >([null, 0]);
+  const [section, setSection] = useState<SectionType>();
+
+  const makeGetSectionReq = async () => {
+    const result = await getSection();
+    setSection(result[2]);
+  };
 
   const makeGetSkillsReq = async () => {
     const result = await getSkills();
@@ -31,6 +47,7 @@ const SkillsSection = () => {
   };
 
   useEffect(() => {
+    makeGetSectionReq();
     makeGetSkillsReq();
   }, []);
 
@@ -43,13 +60,9 @@ const SkillsSection = () => {
       <div className="wrapper">
         <Reveal>
           <div className="grid grid-cols-1 gap-8 md:text-center md:max-lg:px-10">
-            <div>
-              <h2>Skills</h2>
-              <p className="mt-6 md:mx-auto">
-                These are some of the technologies I work with. Greetings! I'm
-                Harman, a dedicated developer with a knack for turning creative
-                ideas into functional, user-friendly applications.
-              </p>
+            <div className="lg:max-w-[70%] 2xl:max-w-[50%] md:mx-auto">
+              <h2 className="mb-6">{section?.title}</h2>
+              <PortableText value={section?.content} />
             </div>
             <div className="flex flex-col gap-10 md:gap-16 mt-4">
               <CategorySelector

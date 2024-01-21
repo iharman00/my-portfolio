@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { SocialTag } from "../components/Tags.tsx";
 import { getSocials } from "../client.ts";
+import { getSection } from "../client.ts";
+import { PortableText } from "@portabletext/react";
 
 import Reveal from "../animations/Reveal.tsx";
 
@@ -11,8 +13,22 @@ interface SocialsType {
   icon: any;
 }
 
+interface SectionType {
+  title: any;
+  content: any;
+  img?: any;
+  imgAlt?: string;
+}
+[];
+
 const ContactSection = () => {
   const [socials, setSocials] = useState<SocialsType[]>([]);
+  const [section, setSection] = useState<SectionType>();
+
+  const makeGetSectionReq = async () => {
+    const result = await getSection();
+    setSection(result[4]);
+  };
 
   const makeGetSocialsReq = async () => {
     const result = await getSocials();
@@ -20,6 +36,7 @@ const ContactSection = () => {
   };
 
   useEffect(() => {
+    makeGetSectionReq();
     makeGetSocialsReq();
   }, []);
 
@@ -28,12 +45,10 @@ const ContactSection = () => {
       <div className="wrapper xl:max-w-[50%] md:text-lg">
         <Reveal>
           <div>
-            <h2>Get in Touch!</h2>
-            <p className="mt-4 max-w-full">
-              I am open to talk about projects and would love to hear from you.
-            </p>
+            <h2 className="mb-4">{section?.title}</h2>
+            <PortableText value={section?.content} />
           </div>
-          <div className="flex flex-col gap-10 mt-10">
+          <div className="flex flex-col gap-10 mt-16">
             <div className="w-fit">
               <p className="font-poppins mb-2">Mail</p>
               <a href="mailto:harmanwork124@gmail.com">
@@ -42,10 +57,10 @@ const ContactSection = () => {
             </div>
             <div className="w-fit">
               <p className="font-poppins">Socials</p>
-              <ul className="flex gap-8 mt-3">
+              <ul className="flex gap-4 mt-3">
                 {socials.map((social, index) => (
                   <li key={index}>
-                    <SocialTag social={social} size="size-16" />
+                    <SocialTag social={social} size="size-14" />
                   </li>
                 ))}
               </ul>

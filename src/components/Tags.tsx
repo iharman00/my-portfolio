@@ -60,12 +60,11 @@ const SocialTag = ({ social, size }: SocialTagProps) => {
   return (
     <a href={social.link} target="_blank">
       <div
-        className={`border-border border-2 hover:bg-border ${size} rounded-full flex justify-center items-center transition-all ease-out duration-300`}
+        className={`bg-secondary hover:bg-secondary-hover ${size} rounded-full flex justify-center items-center transition-all ease-out duration-300`}
       >
         <img
           src={urlFor(social.icon).url()}
           alt={social.alt}
-          className="size-6"
           width="24"
           height="24"
         />

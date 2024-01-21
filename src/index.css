@@ -10,7 +10,7 @@
     @apply lg:w-10/12 mx-auto;
   }
   h1 {
-    @apply font-semibold text-4xl md:text-5xl lg:w-6/12 tracking-[-0.06rem] leading-[120%] md:leading-[120%];
+    @apply font-semibold text-4xl md:text-5xl tracking-[-0.06rem] leading-[120%] md:leading-[120%];
   }
   h2 {
     @apply font-bold text-3xl md:text-4xl leading-[120%] md:leading-[120%];
@@ -19,7 +19,7 @@
     @apply font-semibold text-2xl leading-[120%] md:leading-[120%];
   }
   p {
-    @apply font-sg text-base md:text-lg lg:max-w-[70%] 2xl:max-w-[50%] leading-[170%] md:leading-[170%] lg:leading-[180%] text-foreground-dark;
+    @apply font-sg text-base leading-[170%] md:leading-[170%] lg:leading-[180%] text-foreground-dark;
   }
 }
 

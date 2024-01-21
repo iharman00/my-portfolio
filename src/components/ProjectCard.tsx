@@ -28,7 +28,12 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
     <Reveal>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center p-8 xl:max-w-[80%] 2xl:xl:max-w-[70%] mx-auto border-border border-2 rounded-lg">
         <div className="max-w-[19.5rem] max-h-[14rem] mx-auto md:ml-auto md:even:order-last">
-          <img src={urlFor(project.image).url()} alt={project.imgAlt} />
+          <img
+            src={urlFor(project.image).url()}
+            alt={project.imgAlt}
+            width="auto"
+            height="auto"
+          />
         </div>
         <div className="text-left">
           <div className="flex gap-8 items-center">

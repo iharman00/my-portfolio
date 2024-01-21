@@ -10,7 +10,13 @@ const Header = () => {
           href="#home"
           className="hover:scale-105 transition-transform ease-out duration-300"
         >
-          <img src={logo} alt="harman.dev logo" className="h-6" />
+          <img
+            src={logo}
+            alt="harman.dev logo"
+            width="178"
+            height="24"
+            className="h-6"
+          />
         </a>
 
         <Navbar />

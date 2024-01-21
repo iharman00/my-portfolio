@@ -24,6 +24,7 @@ export async function getSkills() {
     icon,
       "skills": *[_type == "skills" && references(^._id)] | order(index asc) {
         name,
+        alt,
         icon,
       }
     }`);
@@ -37,8 +38,10 @@ export async function getProjects() {
     siteLink,
     codeLink,
     image,
+    imgAlt,
     "techStack": techStack[]->{
         name,
+        alt,
         icon,
     }
     }`);
@@ -48,6 +51,7 @@ export async function getProjects() {
 export async function getSocials() {
   const result = await client.fetch(`*[_type == "socials"] | order(index asc){
     name,
+    alt,
     link,
     icon
     }`);

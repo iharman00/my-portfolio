@@ -10,14 +10,15 @@ interface SkillsType {
   icon: any;
   skills: {
     name: string;
+    alt: string;
     icon: any;
   }[];
 }
 [];
 
-const Skills = () => {
+const SkillsSection = () => {
   const [skills, setSkills] = useState<SkillsType[]>([]);
-  const [activeSkills, setActiveSkills] = useState<
+  const [activeCategory, setActiveCategory] = useState<
     [string, number] | [null, 0]
   >([null, 0]);
 
@@ -25,7 +26,7 @@ const Skills = () => {
     const result = await getSkills();
     setSkills(result);
     if (result.length > 0) {
-      setActiveSkills([result[0].name, 0]);
+      setActiveCategory([result[0].name, 0]);
     }
   };
 
@@ -34,11 +35,11 @@ const Skills = () => {
   }, []);
 
   const showSkills = (category: string, index: number) => {
-    setActiveSkills([category, index]);
+    setActiveCategory([category, index]);
   };
 
   return (
-    <section id="skills" className="container py-52">
+    <section id="skills" className="container py-20 xl:py-32">
       <div className="wrapper">
         <Reveal>
           <div className="grid grid-cols-1 gap-8 md:text-center md:max-lg:px-10">
@@ -53,7 +54,7 @@ const Skills = () => {
             <div className="flex flex-col gap-10 md:gap-16 mt-4">
               <CategorySelector
                 skills={skills}
-                activeSkills={activeSkills}
+                activeCategory={activeCategory}
                 showSkills={showSkills}
               />
               <div className="md:max-w-[80%] mx-auto mt-1">
@@ -61,7 +62,7 @@ const Skills = () => {
                   <SkillsList
                     key={index}
                     skillsList={skills}
-                    activeSkills={activeSkills}
+                    activeCategory={activeCategory}
                     category={category}
                   />
                 ))}
@@ -74,4 +75,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default SkillsSection;

@@ -20,6 +20,12 @@ export default {
       type: 'string',
     },
     {
+      name: 'alt',
+      title: 'Alt text',
+      type: 'string',
+      validation: (Rule: {required: () => any}) => Rule.required(),
+    },
+    {
       name: 'icon',
       title: 'Icon',
       type: 'image',

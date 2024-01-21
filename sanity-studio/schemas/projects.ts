@@ -22,6 +22,12 @@ export default {
       },
     },
     {
+      name: 'imgAlt',
+      title: 'Image Alt text',
+      type: 'string',
+      validation: (Rule: {required: () => any}) => Rule.required(),
+    },
+    {
       name: 'siteLink',
       title: 'Site Link',
       type: 'string',

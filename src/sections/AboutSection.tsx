@@ -1,8 +1,8 @@
 import Reveal from "../animations/Reveal.tsx";
 
-const About = () => {
+const AboutSection = () => {
   return (
-    <section id="about" className="container py-52">
+    <section id="about" className="container py-20 xl:py-32">
       <div className="wrapper">
         <Reveal>
           <div className="flex flex-col gap-20 lg:gap-20 lg:grid lg:grid-cols-2 items-center md:max-lg:text-center">
@@ -28,4 +28,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutSection;

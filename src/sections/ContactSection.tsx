@@ -6,11 +6,12 @@ import Reveal from "../animations/Reveal.tsx";
 
 interface SocialsType {
   name: string;
+  alt: string;
   link: string;
   icon: any;
 }
 
-const Contact = () => {
+const ContactSection = () => {
   const [socials, setSocials] = useState<SocialsType[]>([]);
 
   const makeGetSocialsReq = async () => {
@@ -23,8 +24,8 @@ const Contact = () => {
   }, []);
 
   return (
-    <section id="contact" className="container py-32">
-      <div className="wrapper xl:max-w-[66.666667%] md:text-lg">
+    <section id="contact" className="container py-20 xl:py-32">
+      <div className="wrapper xl:max-w-[50%] md:text-lg">
         <Reveal>
           <div>
             <h2>Get in Touch!</h2>
@@ -56,4 +57,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactSection;

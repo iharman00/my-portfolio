@@ -1,9 +1,9 @@
 import Reveal from "../animations/Reveal.tsx";
-import { Link } from "../components/Links";
+import { Link } from "../components/Links.tsx";
 
-const Hero = () => {
+const HeroSection = () => {
   return (
-    <section id="home" className="container py-40">
+    <section id="home" className="container pt-32 py-20 xl:py-40">
       <div className="wrapper">
         <Reveal>
           <h1>
@@ -17,4 +17,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default HeroSection;

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { getProjects } from "../client.ts";
-import Reveal from "../animations/Reveal";
+import Reveal from "../animations/Reveal.tsx";
 
 import ProjectCard from "../components/ProjectCard.tsx";
 
@@ -10,15 +10,17 @@ interface ProjectsType {
   siteLink: string;
   codeLink: string;
   image: any;
+  imgAlt: string;
   techStack: [
     {
       name: string;
+      alt: string;
       icon: any;
     }
   ];
 }
 
-const Projects = () => {
+const ProjectsSection = () => {
   const [projects, setProjects] = useState<ProjectsType[]>([]);
   const makeGetProjectsReq = async () => {
     const result = await getProjects();
@@ -29,7 +31,7 @@ const Projects = () => {
     makeGetProjectsReq();
   }, []);
   return (
-    <section id="projects" className="container py-52">
+    <section id="projects" className="container py-20 xl:py-32">
       <div className="wrapper md:text-center">
         <Reveal>
           <h2>Projects</h2>
@@ -53,4 +55,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default ProjectsSection;

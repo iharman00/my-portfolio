@@ -46,7 +46,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
               </a>
             </div>
           </div>
-          <p className="w-full max-w-full mt-4 md:mt-6 md:text-base md:leading-[170%]">
+          <p className="w-full max-w-full mt-4 md:text-base md:leading-[170%]">
             {project.description}
           </p>
           <div className="flex gap-4 mt-6 md:mt-8 flex-wrap">

@@ -48,7 +48,7 @@ const ContactSection = () => {
             <PortableText value={section?.title} />
             <PortableText value={section?.content} />
           </div>
-          <div className="flex flex-col gap-10 mt-16">
+          <div className="flex flex-col gap-8 mt-10">
             <div className="w-fit">
               <p className="font-poppins mb-2">Mail</p>
               <a href="mailto:harmanwork124@gmail.com">

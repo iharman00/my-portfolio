@@ -28,7 +28,7 @@ const Footer = () => {
       <div className="wrapper flex flex-col gap-16 lg:gap-32 lg:flex-row justify-between">
         <div className="flex flex-col justify-between">
           <div>
-            <h2 className="mb-2 text-3xl">Harmanpreet Singh</h2>
+            <h3 className="mb-2 text-3xl">Harmanpreet Singh</h3>
             <a
               href="mailto:harmanwork124@gmail.com"
               className="text-foreground-dark"
@@ -44,8 +44,8 @@ const Footer = () => {
         </div>
         <div className="flex gap-20 lg:gap-20">
           <nav>
-            <h3>Navigation</h3>
-            <ul className="flex flex-col gap-3 mt-6">
+            <h3 className="text-lg font-medium">Navigation</h3>
+            <ul className="flex flex-col gap-3 mt-3">
               {navLinks.map((nav, index) => (
                 <li
                   key={index}
@@ -62,12 +62,12 @@ const Footer = () => {
             </ul>
           </nav>
           <div>
-            <h3>Socials</h3>
-            <ul className="flex flex-col gap-2 mt-6">
+            <h3 className="text-lg font-medium">Socials</h3>
+            <ul className="flex flex-col gap-2 mt-3">
               {socials.map((social, index) => (
                 <li key={index} className="flex items-center gap-4">
                   <SocialTag social={social} size="size-12" />
-                  <p className="w-full max-w-full font-poppins text-base">
+                  <p className="w-full max-w-full font-poppins text-base mt-0">
                     {social.name}
                   </p>
                 </li>

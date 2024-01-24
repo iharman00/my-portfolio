@@ -36,7 +36,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         </div>
         <div className="text-left">
           <div className="flex gap-8 items-center">
-            <h3>Netflix Clone</h3>
+            <h3>{project.title}</h3>
             <div className="flex gap-5">
               <a href={project.siteLink} target="_blank">
                 <GoLink size="20px"></GoLink>

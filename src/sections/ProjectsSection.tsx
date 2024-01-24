@@ -8,7 +8,7 @@ import ProjectCard from "../components/ProjectCard.tsx";
 
 interface ProjectsType {
   title: string;
-  description: string;
+  description: any;
   siteLink: string;
   codeLink: string;
   image: any;

@@ -1,3 +1,4 @@
+import { PortableText } from "@portabletext/react";
 import { TechStackTag } from "./Tags.tsx";
 import { GoLink } from "react-icons/go";
 import { FaGithub } from "react-icons/fa";
@@ -8,7 +9,7 @@ import Reveal from "../animations/Reveal.tsx";
 interface ProjectCardProps {
   project: {
     title: string;
-    description: string;
+    description: any;
     siteLink: string;
     codeLink: string;
     image: any;
@@ -45,9 +46,9 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
               </a>
             </div>
           </div>
-          <p className="mt-5 md:text-base md:leading-[170%]">
-            {project.description}
-          </p>
+          <div className="mt-5 div">
+            <PortableText value={project?.description} />
+          </div>
           <div className="flex gap-4 mt-6 md:mt-8 flex-wrap">
             {project.techStack.map((tech, index) => (
               <TechStackTag

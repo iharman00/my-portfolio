@@ -25,3 +25,7 @@
 
 @tailwind components;
 @tailwind utilities;
+
+.div > p {
+  font-size: 1rem !important;
+}

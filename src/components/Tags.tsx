@@ -8,7 +8,7 @@ interface SkillsTagProps {
 
 const SkillsTag = ({ name, icon, alt }: SkillsTagProps) => {
   return (
-    <div className="flex flex-col justify-start items-center gap-4 group">
+    <div className="flex flex-col justify-start items-center gap-4 group cursor-pointer">
       <div className="border-border border-2 hover:bg-border transition-all ease-out duration-300 rounded-full p-5">
         <img
           src={urlFor(icon).url()}
@@ -31,14 +31,14 @@ interface TechStackTagProps {
 
 const TechStackTag = ({ name, icon, alt }: TechStackTagProps) => {
   return (
-    <div className="flex items-center gap-2 w-fit px-4 py-2 group border-border border-2 hover:bg-border rounded-md transition-all ease-out duration-300">
+    <div className="flex items-center gap-2 w-fit px-4 py-2 group border-border border-2 hover:bg-border rounded-md transition-all ease-out duration-300 cursor-pointer">
       <img
         src={urlFor(icon).url()}
         alt={alt}
         style={{ width: "20px", height: "20px" }}
       />
 
-      <p className="font-poppins font-medium text-base max-w-full group-hover:text-foreground mt-0">
+      <p className="font-poppins font-medium text-base text-center max-w-full group-hover:text-foreground mt-0">
         {name}
       </p>
     </div>

@@ -26,14 +26,13 @@ interface ProjectCardProps {
 const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
     <Reveal>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center p-8 xl:max-w-[80%] 2xl:xl:max-w-[70%] mx-auto border-border border-2 rounded-lg">
-        <div className="max-w-[19.5rem] max-h-[14rem] mx-auto md:ml-auto md:even:order-last">
-          <img
-            src={urlFor(project.image).url()}
-            alt={project.imgAlt}
-            style={{ width: "auto", height: "auto" }}
-          />
-        </div>
+      <div className="flex flex-col gap-10 items-center p-8 xl:max-w-[80%] 2xl:xl:max-w-[70%] mx-auto border-border border-2 rounded-lg">
+        <img
+          src={urlFor(project.image).url()}
+          alt={project.imgAlt}
+          style={{ width: "auto", height: "auto" }}
+          className="max-h-[16rem]"
+        />
         <div className="text-left">
           <div className="flex gap-8 items-center">
             <h3>{project.title}</h3>
@@ -46,7 +45,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
               </a>
             </div>
           </div>
-          <p className="w-full max-w-full mt-4 md:text-base md:leading-[170%]">
+          <p className="mt-5 md:text-base md:leading-[170%]">
             {project.description}
           </p>
           <div className="flex gap-4 mt-6 md:mt-8 flex-wrap">

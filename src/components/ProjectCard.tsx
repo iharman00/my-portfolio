@@ -41,7 +41,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
               <a href={project.siteLink} target="_blank">
                 <GoLink size="20px"></GoLink>
               </a>
-              <a href={project.siteLink} target="_blank">
+              <a href={project.codeLink} target="_blank">
                 <FaGithub size="20px"></FaGithub>
               </a>
             </div>

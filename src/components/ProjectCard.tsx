@@ -27,7 +27,7 @@ interface ProjectCardProps {
 const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
     <Reveal>
-      <div className="flex flex-col gap-10 items-center p-8 xl:max-w-[80%] 2xl:xl:max-w-[70%] mx-auto border-border border-2 rounded-lg">
+      <div className="flex flex-col gap-10 items-center p-8 xl:max-w-[60%] 2xl:xl:max-w-[50%] mx-auto border-border border-2 rounded-lg">
         <img
           src={urlFor(project.image).url()}
           alt={project.imgAlt}

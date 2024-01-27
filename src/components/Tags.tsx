@@ -38,7 +38,7 @@ const TechStackTag = ({ name, icon, alt }: TechStackTagProps) => {
         style={{ width: "20px", height: "20px" }}
       />
 
-      <p className="font-poppins font-medium text-base text-center max-w-full group-hover:text-foreground mt-0">
+      <p className="font-poppins font-medium text-sm text-center max-w-full group-hover:text-foreground mt-0">
         {name}
       </p>
     </div>

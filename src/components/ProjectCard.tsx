@@ -27,12 +27,12 @@ interface ProjectCardProps {
 const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
     <Reveal>
-      <div className="flex flex-col gap-10 items-center p-8 xl:max-w-[70%] mx-auto border-border border-2 rounded-lg">
+      <div className="flex flex-col xl:grid xl:grid-cols-2 gap-12 items-center p-8 mx-auto border-border border-2 rounded-lg">
         <img
           src={urlFor(project.image).url()}
           alt={project.imgAlt}
           style={{ width: "auto", height: "auto" }}
-          className="max-h-[16rem]"
+          className="lg:p-8"
         />
         <div className="text-left">
           <div className="flex gap-8 items-center">
@@ -49,7 +49,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           <div className="mt-5 div">
             <PortableText value={project?.description} />
           </div>
-          <div className="flex gap-4 mt-6 md:mt-8 flex-wrap">
+          <div className="flex gap-4 mt-10 flex-wrap">
             {project.techStack.map((tech, index) => (
               <TechStackTag
                 key={index}

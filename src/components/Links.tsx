@@ -1,4 +1,4 @@
-import { AnchorHTMLAttributes } from "react";
+import { AnchorHTMLAttributes, HTMLAttributes, ReactHTMLElement } from "react";
 
 interface Props {
   children: string;
@@ -22,12 +22,10 @@ const NavLink = ({
 
 const Link = ({
   children,
-  href,
   ...rest
-}: Props & AnchorHTMLAttributes<HTMLAnchorElement>) => {
+}: AnchorHTMLAttributes<HTMLAnchorElement>) => {
   return (
     <a
-      href={href}
       className="font-poppins italic font-medium text-base lg:text-lg inline-block mt-6 lg:mt-8 after:block after:bg-primary after:h-1 after:relative after:bottom-[-0.5rem] after:hover:bottom-[-0.2rem] after:transition-all after:ease-out after:duration-300 after:-z-20"
       {...rest}
     >

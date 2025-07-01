@@ -5,7 +5,6 @@ import { FaGithub } from "react-icons/fa";
 
 import { urlFor } from "../client.ts";
 import Reveal from "../animations/Reveal.tsx";
-import { Link } from "./Links.tsx";
 
 interface ProjectCardProps {
   project: {

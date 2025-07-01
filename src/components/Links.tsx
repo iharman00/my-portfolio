@@ -1,4 +1,4 @@
-import { AnchorHTMLAttributes, HTMLAttributes, ReactHTMLElement } from "react";
+import { AnchorHTMLAttributes } from "react";
 
 interface Props {
   children: string;

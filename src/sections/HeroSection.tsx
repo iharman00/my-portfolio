@@ -37,7 +37,7 @@ const HeroSection = () => {
               <Link href="#contact">Let's talk!</Link>
             </div>
             {section?.img && section?.imgAlt && (
-              <div className="relative w-full md:max-w-[60%] lg:max-w-[30%] aspect-[3/4] rounded-lg shadow-lg overflow-hidden mx-auto lg:mx-0">
+              <div className="w-full md:max-w-[60%] lg:max-w-[30%] aspect-[3/4] rounded-lg shadow-lg overflow-hidden mx-auto lg:mx-0">
                 <img
                   src={urlFor(section?.img).url()}
                   alt={section?.imgAlt}

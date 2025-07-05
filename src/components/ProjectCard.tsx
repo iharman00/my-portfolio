@@ -46,7 +46,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
               </a>
               <a href={project.codeLink} target="_blank">
                 <span className="flex gap-2 items-center">
-                  Visite GitHub
+                  Visit GitHub
                   <FaGithub size="20px"></FaGithub>
                 </span>
               </a>
